@@ -185,7 +185,7 @@ Each reservation contains the foloowing information:
 
 ## Reservation System
 
-One of the main goals of this project was implementing a complete backend reservation logic.
+Main goals of this project was implementing a complete backend reservation logic.
 
 The reservation system validates every submitted reservation before saving it.
 
