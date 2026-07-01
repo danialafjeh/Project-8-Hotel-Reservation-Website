@@ -5,6 +5,8 @@ A full-stack hotel reservation web application developed with **Django (MVT Arch
 
 The frontend template is based on a modern design from **themewagon.com**, which has been extensively customized and extended with additional pages and backend integration.
 
+‼️ Website's language is in English.
+
 ---
 
 # Technologies
@@ -277,9 +279,9 @@ This project focuses on implementing real-world backend business logic using Dja
 
 Major concepts practiced include:
 
-* Business Logic Implementation (Main purpose)
-* Reservation Conflict Detection (Main purpose)
-* Date Validation (main purpose)
+* Business Logic Implementation (Main Purpose)
+* Reservation Conflict Detection (Main Purpose)
+* Date Validation (Main Purpose)
 * Django MVT Architecture
 * User Authentication
 * Authorization
@@ -294,5 +296,5 @@ Major concepts practiced include:
 
 # License
 
-This project is intended for educational and portfolio purposes and it's not deployed on real host.
+‼️ This project is intended for educational and portfolio purposes and it's not deployed on real host.
 
