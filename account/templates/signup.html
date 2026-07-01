@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Create Your Account</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2><strong>Create Your Account In A Second</strong></h2>
+                    <h3>Already Have An Account ? <a class="btn btn-primary" href="{% url 'signin_choice_page' %}">Sign In</a></h3>
+                    <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                    <br>
+                    <form id="request" class="main_form" action="{% url 'signup_page' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% for field in form %}
+                            <div class="col-md-12 ">
+                                {{ field }}
+                            </div>
+                            {% endfor %}
+                            <div class="col-md-12">
+                                <button type="submit" class="send_btn">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Book Your Room Online</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="book_room">
+                    <h1>Selected Room : {{ room.room_number }}</h1>
+                    <form class="book_now" action="{% url 'reservation_checkout' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="room_id" value="{{ room.id }}">
+                            </div>
+                            <div class="col-md-12">
+                                <span>Arrival</span>
+                                <img class="date_cua" src="{% static 'images/date.png' %}">
+                                <input class="online_book" placeholder="dd/mm/yyyy" type="date" name="arrival">
+                            </div>
+                            <div class="col-md-12">
+                                <span>Departure</span>
+                                <img class="date_cua" src="{% static 'images/date.png' %}">
+                                <input class="online_book" placeholder="dd/mm/yyyy" type="date" name="departure">
+                            </div>
+                            <div class="col-md-12">
+                                <button class="book_btn" type="submit">Book Your Room</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Update Your Profile</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2><strong>Update Your Current Info</strong></h2>
+                    <h3>Want to change your current password too ? <a class="btn btn-primary" href="{% url 'update_password_page' %}">Update Password</a></h3>
+                    <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                    <br>
+                    <form id="request" class="main_form" action="{% url 'update_profile_page' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% for field in form %}
+                            <div class="col-md-12 ">
+                                {{ field }}
+                            </div>
+                            {% endfor %}
+                            <div class="col-md-12">
+                                <button type="submit" class="send_btn">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</section>
+{% endblock %}

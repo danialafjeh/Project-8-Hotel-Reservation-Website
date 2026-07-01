@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Sign In To Your Account</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="contact">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-md-6">
+                  <h2><strong>Signing In As : Hotel Manager/Admin</strong></h2>
+                  <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                  <br>
+                  <form id="request" class="main_form" action="{% url 'signin_admins_page' %}" method="POST">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Your Username" type="text" name="username"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Your Password" type="password" name="password"> 
+                        </div>
+                        <div class="col-md-12">
+                           <button type="submit" class="send_btn">Sign In</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><br>
+</section>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+   <div class="back_re">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="title">
+                  <h2>About Us</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- about -->
+   <div class="about">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-5">
+               <div class="titlepage">
+                  <p class="margin_0">{{ information.description }}</p>
+               </div>
+            </div>
+            <div class="col-md-7">
+               <div class="about_img">
+                  <figure><img src="{% static 'images/about.png' %}" alt="#" /></figure>
+                  <br><br>
+                  <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                  <br><br>
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th scope="col">Address</th>
+                           <th scope="col">{{ information.address }}</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Phone 1</th>
+                           <th>{{ information.phone_1 }}</th>
+                        </tr>
+                        <tr>
+                           <th scope="row">Phone 2</th>
+                           <th>{{ information.phone_2 }}</th>
+                        </tr>
+                        <tr>
+                           <th scope="row">Phone 3</th>
+                           <th>{{ information.phone_3 }}</th>
+                        </tr>
+                        <tr>
+                           <th scope="row">Email 1</th>
+                           <th>{{ information.email_1 }}</th>
+                        </tr>
+                        <tr>
+                           <th scope="row">Email 2</th>
+                           <th>{{ information.email_2 }}</th>
+                        </tr>
+                        <tr>
+                           <th scope="row">Email 3</th>
+                           <th>{{ information.email_3 }}</th>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                  <br><br>
+                  <figure><img src="{% static 'images/banner2.jpg' %}" alt="#" /></figure>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end about -->
+</section>
+{% endblock %}

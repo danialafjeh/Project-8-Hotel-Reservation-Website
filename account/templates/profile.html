@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>welcome to your profile</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="gallery">
+        <div class="container">
+            <div class="row  justify-content-center">
+                <div class="col-md-10">
+                    <div class="card border-danger border-10">
+                        <div class="card-header border-danger border-10">
+                            <h3><strong>Your Information :</strong></h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">First Name</th>
+                                        <td scope="col">{{ user_info.first_name }}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <th>Last Name</th>
+                                        <td>{{ user_info.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <th>Username</th>
+                                        <td>{{ user_info.username }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <th>Email Address</th>
+                                        <td>{{ user_info.email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <th>Access Level</th>
+                                        {% if request.user.is_superuser %}
+                                        <td>Manager</td>
+                                        {% elif request.user.is_staff %}
+                                        <td>Admin</td>
+                                        {% else %}
+                                        <td>Guest</td>
+                                        {% endif %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <tbody>
+                                    <tr> 
+                                        <td><a href="{% url 'update_profile_page' %}" class="btn btn-warning">Update Your Info</a></td>
+                                        {% if request.user.is_superuser or request.user.is_staff %}
+                                        <td><a href="{% url 'admin:index' %}" class="btn btn-success">Hotel Management Panel</a></td>
+                                        {% endif %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr style="border: none; height: 4px; background-color: #ff6a00;">
+                    <br><br>
+                    <div class="card border-danger border-10">
+                        <div class="card-header border-danger border-10">
+                            <h3><strong>Your Reservations :</strong></h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Room</th>
+                                        <th scope="col">Arrival</th>
+                                        <th scope="col">Departure</th>
+                                        <th scope="col">Total Price</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Last Update</th>
+                                        <th scope="col">Cancel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for res in reservations %}
+                                    <tr>
+                                        <td>{{ res.id }}</td>
+                                        <td>{{ res.room.room_number }}</td>
+                                        <td>{{ res.arrival_date }}</td>
+                                        <td>{{ res.departure_date }}</td>
+                                        <td>{{ res.total_price }}$</td>
+                                        <td>{{ res.status }}</td>
+                                        <td>{{ res.updated_at }}</td>
+                                        <td><a href="{% url 'reservation_cancel' res.id %}" class="btn btn-danger">Cancel</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+</section>
+{% endblock %}

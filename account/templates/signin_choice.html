@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="back_re">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Sign In To your Account</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card border-danger border-10">
+                        <div class="card-header border-danger border-10">
+                            <h3><strong>Choose Your Role To Sign In :</strong></h3>
+                        </div>
+                        <div class="card-body">
+                            <h3>For Guests Only :</h3>
+                            <a href="{% url 'signin_guests_page' %}" class="btn btn-success">Sign In To Your Account</a>
+                            <br>
+                            <br>
+                            <h3>For Management & Staff Only :</h3>
+                            <a href="{% url 'signin_admins_page' %}" class="btn btn-success">Sign In To Your Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</section>
+{% endblock %}
