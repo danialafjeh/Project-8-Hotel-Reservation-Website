@@ -15,7 +15,7 @@ The frontend template is based on a modern design from **themewagon.com**, which
 * Django
 * Django MVT Architecture
 * Django ORM
-* PostgreSQL
+* PostgreSQL Database
 * Django Authentication System
 * Django Messages Framework
 
