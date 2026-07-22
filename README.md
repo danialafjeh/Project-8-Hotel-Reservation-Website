@@ -297,7 +297,3 @@ Major concepts practiced include:
 
 ---
 
-# License
-
-‼️ This project is intended for educational and portfolio purposes and it's not deployed on real host.
-
